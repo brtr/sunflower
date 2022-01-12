@@ -1,3 +1,4 @@
+const hre = require("hardhat");
 const { AXE_ADDRESS, ARMOR_ADDRESS, IRON_ADDRESS, TOKEN_ADDRESS, FARM_ADDRESS, PICKAXE_ADDRESS, STONE_ADDRESS, STONE_PICKAXE_ADDRESS, WOOD_ADDRESS, AIR_DROPPER_ADDRESS, EGG_ADDRESS, CHICKEN_COOP_ADDRESS,
   CHRISTMAS_TREE_ADDRESS, COMMUNITY_CRAFTING_ADDRESS, DOG_ADDRESS, GNOME_ADDRESS, GOLD_ADDRESS, GOLDEN_EGG_ADDRESS, CHICKEN_ADDRESS, IRON_PICKAXE_ADDRESS, STATUE_ADDRESS, OWNER_ADDRESS } = process.env;
 
@@ -59,7 +60,7 @@ const main = async () => {
   contractFactory = await hre.ethers.getContractFactory('SunflowerFarmersStatue');
   const statueContract = contractFactory.attach(STATUE_ADDRESS);
 
-  txn = await tokenContract.mint(OWNER_ADDRESS, "100000000000000000000000");
+  let txn = await tokenContract.mint(OWNER_ADDRESS, "100000000000000000000000");
   txn.wait();
   txn = await tokenContract.passMinterRole(FARM_ADDRESS);
   txn.wait();
