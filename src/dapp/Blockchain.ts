@@ -33,8 +33,8 @@ type Contracts = Record<ItemName, any>;
 
 export const MINIMUM_GAS_PRICE = 40;
 const SAVE_OFFSET_SECONDS = 5;
-export const COMMUNITY_CRAFTING_ADDRESS =
-  "0x248b3f1ead0aB11A975c55A6ed8c690B5E5A10d1";
+export const COMMUNITY_CRAFTING_ADDRESS = "0xcA3E8Ef621b2CFF357e7f02f112550cff73d7985";
+const CHAIN_ID = 80001;
 
 export class BlockChain {
   private web3: Web3 | null = null;
@@ -67,15 +67,15 @@ export class BlockChain {
     try {
       this.token = new this.web3.eth.Contract(
         Token as any,
-        "0xdf9B4b57865B403e08c85568442f95c26b7896b0"
+        "0x158B3BFdb709e6A265B266eDE6E0835dDcdD8f89"
       );
       this.farm = new this.web3.eth.Contract(
         Farm as any,
-        "0x6e5Fa679211d7F6b54e14E187D34bA547c5d3fe0"
+        "0x51D112D79a8EDe91f28E2c71F34CBC489bC74f82"
       );
       this.chickens = new this.web3.eth.Contract(
         Chicken as any,
-        "0xf0F1Cc9192ca0064EB3D35e0DE1CE5e56572ecab"
+        "0x903a629e787265E4536485C0602Cbb6A3ECec4b0"
       );
       this.quickswap = new this.web3.eth.Contract(
         QuickSwap as any,
@@ -103,11 +103,11 @@ export class BlockChain {
 
       this.alchemyToken = new this.web3.eth.Contract(
         Token as any,
-        "0xdf9B4b57865B403e08c85568442f95c26b7896b0"
+        "0x158B3BFdb709e6A265B266eDE6E0835dDcdD8f89"
       );
       this.alchemyFarm = new this.web3.eth.Contract(
         Farm as any,
-        "0x6e5Fa679211d7F6b54e14E187D34bA547c5d3fe0"
+        "0x51D112D79a8EDe91f28E2c71F34CBC489bC74f82"
       );
     } catch (e) {
       // Timeout, retry
@@ -160,9 +160,8 @@ export class BlockChain {
       this.oldInventory = null;
       const chainId = await this.web3.eth.getChainId();
 
-      if (chainId === 137) {
+      if (chainId === CHAIN_ID) {
         await this.connectToMatic();
-
         await this.loadFarm();
       } else {
         throw new Error("WRONG_CHAIN");
@@ -206,6 +205,7 @@ export class BlockChain {
       this.loadGoldStrength(),
       this.loadEggCollectionTime(),
     ]);
+    console.log("account, ", account);
     this.details = account;
     this.inventory = inventory;
     this.totalItemSupplies = itemSupplies;
@@ -408,7 +408,6 @@ export class BlockChain {
     const farm = await this.alchemyFarm.methods
       .getLand(this.account)
       .call({ from: this.account });
-
     const balance = this.web3.utils.fromWei(rawBalance.toString());
     console.log({ balance });
     return {
@@ -821,7 +820,7 @@ export class BlockChain {
           .balanceOf(this.account)
           .call({ from: this.account })
     );
-
+    console.log("inventory: ", itemBalancesPromise);
     const itemBalances = await Promise.all(itemBalancesPromise);
 
     console.log({ itemBalances });

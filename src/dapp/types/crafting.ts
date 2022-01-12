@@ -112,7 +112,7 @@ export const recipes: Recipe[] = [
     description: "Used for cutting and collecting wood",
     image: axe,
     type: "ERC20",
-    address: "0xc65C99E4c3AAb25322d4E808e5e96Ec774330696",
+    address: "0xa631022A1f6897c1527187AD764E0b8368612aC2",
     ingredients: [
       {
         name: "$SFF",
@@ -127,7 +127,7 @@ export const recipes: Recipe[] = [
     description: "Used for mining and collecting stone",
     image: woodPickaxe,
     type: "ERC20",
-    address: "0x526439FCCd9494b61F9CfaA0c287Cb04a30F2D3f",
+    address: "0xBF5ad5818556e95119606e4DED84feAB6EF8A9B0",
     ingredients: [
       {
         name: "Wood",
@@ -148,7 +148,7 @@ export const recipes: Recipe[] = [
     description: "Used for mining and collecting iron ore",
     image: pickaxe,
     type: "ERC20",
-    address: "0xBDc6814D29fBA97a426057778ABe702079480b80",
+    address: "0x918A4e71C9d4928a0cE71086b7d9FaA610de7390",
     ingredients: [
       {
         name: "Wood",
@@ -173,7 +173,7 @@ export const recipes: Recipe[] = [
     description: "Used for mining and collecting gold",
     image: ironPickaxe,
     type: "ERC20",
-    address: "0x4a223dDc81F3F73eeB2Cc7E625e6013A028fae62",
+    address: "0xC5bF8690AB86E4CeaEb2EB0FB35d273579Da1D23",
     ingredients: [
       {
         name: "Wood",
@@ -259,7 +259,7 @@ export const recipes: Recipe[] = [
     description: "A symbol of the holy token",
     image: statue,
     type: "NFT",
-    address: "0x71556745dA70F2103C50f0E577C1ACF8A9aAC05E",
+    address: "0x9e29Aa04DBfAf440bB4357D75899a0DB6BA761Dd",
     ingredients: [
       {
         name: "$SFF",
@@ -282,11 +282,11 @@ export const recipes: Recipe[] = [
   },
   {
     name: "Scarecrow",
-    abi: Scarecrow,
     description: "Grow wheat (coming soon) 3x faster.",
     image: scarecrow,
     type: "NFT",
-    address: "0x143Ba32499065b5F89c518d5B75a38F3529cE324",
+    address: "TODO",
+    isLocked: true,
     ingredients: [
       {
         name: "$SFF",
@@ -309,7 +309,7 @@ export const recipes: Recipe[] = [
     description: "A christmas tree for the holidays",
     image: christmasTree,
     type: "NFT",
-    address: "0x2fa133F8A7C9db0285BfF9984c29316482d9834d",
+    address: "0x1dc4520AF15e528eC00dd5Cd29127178684602e1",
     openSeaLink:
       "https://opensea.io/collection/sunflower-farmers-christmas-tree",
     ingredients: [
@@ -332,7 +332,7 @@ export const recipes: Recipe[] = [
     description: "Produce eggs 3x as fast with this stylish coop",
     image: chickenCoop,
     type: "NFT",
-    address: "0x3D422610242E66aB04069349DF9e189B90A42449",
+    address: "0xb3244a7bfFc518973847A4bcc82793B336526c83",
     ingredients: [
       {
         name: "$SFF",
@@ -360,7 +360,7 @@ export const recipes: Recipe[] = [
     description: "An animal used to produce eggs",
     image: chicken,
     type: "ERC20",
-    address: "0xf0F1Cc9192ca0064EB3D35e0DE1CE5e56572ecab",
+    address: "0x903a629e787265E4536485C0602Cbb6A3ECec4b0",
     ingredients: [
       {
         name: "$SFF",
@@ -375,7 +375,7 @@ export const recipes: Recipe[] = [
     description: "Will the golden egg bring you happiness?",
     image: goldEgg,
     type: "NFT",
-    address: "0x282aAE7B826D5de16e78eCDc2015eB2110918fd2",
+    address: "0xe2656ed9246d03bD1c3bF1CFD712bf67a0031E7E",
     limit: 300,
     supply: 300,
     openSeaLink:
@@ -395,11 +395,11 @@ export const recipes: Recipe[] = [
   },
   {
     name: "OG Potato Statue",
-    abi: PotatoStatue,
     description: "Flex your status as an original potato hustler",
     image: potatoStatue,
     type: "NFT",
-    address: "0x938a6942Bd09CfaC1bc4B2420F581A90fB5d5775",
+    address: "TODO",
+    isLocked: true,
     ingredients: [
       {
         name: "Stone",
@@ -413,11 +413,11 @@ export const recipes: Recipe[] = [
   },
   {
     name: "Farm Cat",
-    abi: FarmCat,
     description: "A cat named Victoria that helps keep rats away.",
     image: farmCat,
     type: "NFT",
-    address: "0x446F9E51a1f511Af1385dfc88F0d395b5AAAE856",
+    address: "TODO",
+    isLocked: true,
     ingredients: [
       {
         name: "Gold",
@@ -435,7 +435,7 @@ export const recipes: Recipe[] = [
     description: "Herd sheep 4x faster with Chonker the Dog.",
     image: dog,
     type: "NFT",
-    address: "0x457ea0b03dD671baC515FA5bf324918Db4B12669",
+    address: "0x42995285f2F7162800f6c3eB2cd8cF3A618Abb7d",
     ingredients: [
       {
         name: "$SFF",
@@ -457,7 +457,7 @@ export const recipes: Recipe[] = [
     description: "Influence the weather with this magic gnome",
     image: gnome,
     type: "NFT",
-    address: "0x35bE1387D1bBC2d263b73ab2825eE91f1fd75CF3",
+    address: "0x1eb70463F40F34865f89eC2d4b57b08F41FD4e99",
     ingredients: [
       {
         name: "$SFF",
@@ -511,7 +511,7 @@ export const items: Item[] = [
     description: "A natural resource in Sunflower Land used for crafting",
     image: stone,
     type: "ERC20",
-    address: "0xE11e8ff4D9C10A7E4524e8fE6b4F1F3E8665eDCE",
+    address: "0x14F742F3E8526c48Da839F7F42081CCA7dcfFA4A",
   },
   {
     name: "Wood",
@@ -520,7 +520,7 @@ export const items: Item[] = [
       "A bountiful resource in Sunflower Land used for crafting",
     image: wood,
     type: "ERC20",
-    address: "0xC8A6fFc3720867470A2395D1634B3085BbDDf71a",
+    address: "0x4cACA85250bEf900b3069985eEF63f9ca77314FA",
   },
 
   {
@@ -530,7 +530,7 @@ export const items: Item[] = [
       "A bountiful resource in Sunflower Land used for crafting",
     image: iron,
     type: "ERC20",
-    address: "0x4a114F6EC3e0f6c57A9Db37140ca88Ee5525E55B",
+    address: "0x622e74A2cD527796062E988fFE517c33Ac61F987",
   },
   {
     name: "Gold",
@@ -538,7 +538,7 @@ export const items: Item[] = [
     description: "A scarce resource in Sunflower Land used for crafting",
     image: goldOre,
     type: "ERC20",
-    address: "0xbc7B1c141218C5d7BD1BEb8098BDe5D8a1e327E6",
+    address: "0x0E32ED09FbDc9e871D7bDBbAD300a5eA5122610a",
   },
   {
     name: "Egg",
@@ -547,7 +547,7 @@ export const items: Item[] = [
       "A bountiful resource in Sunflower Land used for crafting",
     image: egg,
     type: "ERC20",
-    address: "0x3560B931b122fF740Db06CB5B4569A0dC5d28954",
+    address: "0x9C470A9622e49080922822C4D7981169aC3292B0",
   },
 ];
 

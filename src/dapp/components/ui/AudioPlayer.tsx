@@ -11,7 +11,7 @@ import play from '../../images/ui/audio-player/play.png'
 import pause from '../../images/ui/audio-player/pause.png'
 import next from '../../images/ui/audio-player/next.png'
 import note from '../../images/ui/audio-player/note.png'
-import {playlist} from '../../songs/playlist.ts'
+import {playlist} from '../../songs/playlist'
 import './AudioPlayer.css'
 
 export const AudioPlayer: React.FC = () => {

@@ -1,34 +1,50 @@
-# Sunflower Farmer
+# 发布流程
 
-A blockchain based game where players can play to earn Sunflower Farmer Tokens.
+## 发布准备
 
-You can play the game here: https://www.sunflower-farmers.com/
+复制env_sample到.env并修改各个参数, 然后
 
-# How does it work?
+```
+npm install
+```
 
-For more details, please see the guide - https://docs.sunflower-farmers.com/
+## 发布合约
 
-# Code Structure
+```
+npx hardhat run scripts/deploy.js --network rinkeby
+```
 
-Smart Contracts can be found in `src/contracts`.
+## 验证合约 (国内网络可能会超时，在服务器上验证过没问题)
 
-Decentralized App (Dapp) can be found in `src/dapp`.
+```
+npx hardhat verify --network rinkeby 合约地址
+```
 
-# How to run?
+## 配置合约 (默认会先mint 10w个token到owner地址, 可以修改)
 
-The dapp is currently pointed at the production blockchain. You can switch to Polygon testnet and it should pick up the chainID automatically.
+```
+npx hardhat run scripts/setup.js --network rinkeby
+```
 
-`yarn`
-`yarn start`
+## 前端服务器地址
 
-<img width="527" alt="Screen Shot 2021-08-25 at 11 52 24 am" src="https://user-images.githubusercontent.com/11745561/130713259-f87fd1b4-a6f1-4b25-b8b9-4eff6beee9e9.png">
+44.192.130.77
 
-# Licensing 
+## 安装node环境
 
-All code is under MIT licensing. We encourage people to improve the Sunflower Metaverse.
+```
+npm install
+```
 
-Please check with the individual designers that you have permissions before using any of the in-game assets sprites. Doing so without permissions is illegal.
+## 修改前端页面合约地址
 
-We are open source and bootstrapped with zero funds. Hence we have used a base asset pack - https://danieldiggle.itch.io/sunnyside
+主要是这两个文件，把地址改成正确的地址, 还有CHAIN ID改成合约发布的chain id
+./src/dapp/Blockchain.ts
+./src/dapp/types/crafting.ts
 
-You can find the designer and his amazing work here - https://twitter.com/DanielDiggle
+## 启动node
+
+```
+yarn start
+```
+
